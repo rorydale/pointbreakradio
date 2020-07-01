@@ -102,6 +102,17 @@ textarea {
   margin: 20px auto 0;
 }
 
+.radioguide {
+  position: relative;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 12px;
+}
+
+.radioguide a:link, .radioguide a:active, .radioguide a:hover, .radioguide a:visited {
+  color: #acacac;
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
