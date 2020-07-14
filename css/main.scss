@@ -98,33 +98,71 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+   body {
+     background: rgb(59,78,221);
+     background: linear-gradient(0deg, rgba(59,78,221,1) 0%, rgba(211,40,211,1) 80%, rgba(247,6,205,1) 100%);
+   }
+
+  .container {
+    width: 600px;
+    margin: 0 auto;
+    font-family: sans-serif;
+    text-align: center;
+    color: #e7e7e7;
+
+    h1,
+    h2,
+    h3 {
+      color: #00e8f4;
+      font-weight: 400;
+      margin-bottom: 0px;
+    }
+
+    h2 {
+      margin-top: 25px;
+    }
+
+    p {
+      margin-top: 0px;
+    }
+
+    .more {
+      margin-top: 15px;
+      font-size: 13px;
+    }
+
+    a {
+      &:link,
+      &:active,
+      &:hover,
+      &:visited {
+        color: #ffffff;
+      }
+    }
+
+  }
+
  .logo {
-  position: relative;
-  width: 300px;
-  height: auto;
-  margin: 30px auto 0;
-  display: block;
+   position: relative;
+   width: 220px;
+   height: auto;
+   margin: 50px auto 30px;
+   display: block;
  }
 
  .iframe {
    position: relative;
-   width: 215px;
+   width: 100%;
    margin: 20px auto 0;
  }
 
  .radioguide {
-   position: relative;
+  position: relative;
+  margin-top: 30px;
+  margin-bottom: 20px;
   text-align: center;
   font-family: sans-serif;
-  font-size: 12px;
-  a {
-    &:link,
-    &:active,
-    &:hover,
-    &:visited {
-      color: #acacac;
-    }
-  }
+  font-size: 12px;  
  }
 
 /* ==========================================================================
@@ -218,6 +256,12 @@ textarea {
 
 @media only screen and (min-width: 35em) {
   /* Style adjustments for viewports that meet the condition */
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 350px;
+  }
 }
 
 @media print,
