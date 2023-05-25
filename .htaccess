@@ -48,8 +48,8 @@ AddDefaultCharset UTF-8
 </IfModule>
 
 
-<!-- <Files config.php>
+<Files config.php>
   Order allow,deny
   Deny from all
-</Files> -->
+</Files>
 
