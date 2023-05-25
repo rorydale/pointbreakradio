@@ -1,3 +1,3 @@
 <?php
 
-  define('GITHUB_ACCESS_TOKEN', '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');
+  define('GITHUB_ACCESS_TOKEN', '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');
