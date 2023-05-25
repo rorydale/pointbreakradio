@@ -27,7 +27,8 @@ $curl = curl_init();
 // Set the cURL options
 curl_setopt_array($curl, [
     CURLOPT_URL => $url,
-    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_RETURNTRANSFER => 1,
+    CURLOPT_USERAGENT => $_SERVER['HTTP_USER_AGENT'],
     CURLOPT_HTTPHEADER => $headers
 ]);
 
