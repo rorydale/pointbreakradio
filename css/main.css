@@ -117,12 +117,12 @@ body {
   /* Use 100% height to fill the background container */
   overflow-y: auto;
   /* Enable scrolling for the content */
-  padding: 0 100px;
+  padding: 0 10px;
 }
 
 .content .container {
   max-width: 1020px;
-  min-width: 420px;
+  min-width: 340px;
   margin: 0 auto;
   font-family: sans-serif;
   text-align: center;

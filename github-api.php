@@ -80,8 +80,6 @@ if (curl_errno($curl)) {
     // Pass the extracted commit data to the Handlebars.js template
     print json_encode($commits);
 
-  } else {
-    print json_encode($apiResponse);
   }
 }
 
