@@ -25,8 +25,7 @@ $curl = curl_init();
 // Set the cURL options
 curl_setopt_array($curl, [
     CURLOPT_URL => $url,
-    CURLOPT_RETURNTRANSFER => 1,
-    CURLOPT_USERAGENT => $_SERVER['HTTP_USER_AGENT'],
+    CURLOPT_RETURNTRANSFER => true,
     CURLOPT_HTTPHEADER => $headers
 ]);
 
@@ -39,9 +38,7 @@ if (curl_errno($curl)) {
     // Handle the error
 } else {
     // Process the response
-    $apiResponse = json_decode($response, true);
-    print json_encode($apiResponse);
-    return;
+    $apiResponse = json_decode($response, true);    
     
     $commits = array();
     foreach ($apiResponse as $commit) {
