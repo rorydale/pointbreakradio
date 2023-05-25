@@ -13,56 +13,60 @@
   <meta name="theme-color" content="#fafafa">
 </head>
 
-<body class="container">
-  <!--[if IE]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]-->
-  <!-- Add your site or application content here -->
-  <img class="logo" src="img/pointbreakradio-logo.png">
-  <h1>Listen</h1>
-  <p><a href="https://mixcloud.com/live/pointbreakradio">MixCloud LIVE</a></p>
-  <p>Follow on <a href="https://www.instagram.com/pointbreakradio/">Instagram</a>, <a href="https://www.facebook.com/pointbreakradio">Facebook</a>, and <a href="https://twitter.com/pointbreakradio">Twitter</a> for show info and times, and subscribe on MixCloud for notifications when the show is live!</p>
-  <div class="iframe">
-    <iframe width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&feed=%2Fpointbreakradio%2F2023-03-21%2F" frameborder="0" ></iframe>
-  </div>  
-  <div class="iframe">
-    <iframe width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&feed=%2Fpointbreakradio%2F2022-11-18%2F" frameborder="0" ></iframe>
-  </div>
-  <div class="iframe">
-    <iframe width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&feed=%2Fpointbreakradio%2F2022-11-17%2F" frameborder="0" ></iframe>
-  </div>
-  <div class="iframe">
-    <iframe width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&feed=%2Fpointbreakradio%2F2022-11-16%2F" frameborder="0" ></iframe>
-  </div>
-  <div class="iframe">
-    <iframe width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&feed=%2Fpointbreakradio%2F2022-11-15%2F" frameborder="0" ></iframe>
-  </div>
-  <div class="iframe">
-    <iframe width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&feed=%2Fpointbreakradio%2F2022-09-18%2F" frameborder="0" ></iframe>
-  </div>  
-  <p class="more"><a href="https://mixcloud.com/pointbreakradio">More...</a></p>
-  <h2>Shop</h2>
-  <p><a href="https://shop.pointbreakradio.com">Merch</a></p>
-  <h2>Connect</h2>
-  <p><a href="https://facebook.com/pointbreakradio">Facebook</a> | <a href="https://instagram.com/pointbreakradio">Instagram</a> | <a href="https://twitter.com/pointbreakradio">Twitter</a></p>
-  <div class="radioguide">
-    <p>© Point Break Radio - Established 2020</p>
-  </div>
-  <script src="js/vendor/modernizr-3.8.0.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
+<body>
+  <div class="background-container">
+    <div class="gradient-overlay"></div>
+      <div class="content">
+        <div class="container">   
+          <!--[if IE]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+          <![endif]-->
+          <!-- Add your site or application content here -->
+          <img class="logo" src="img/pointbreakradio-logo.png">
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171277034-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+          <nav class="menu">
+            <ul>
+              <li><a href="https://mixcloud.com/live/pointbreakradio" title="MixCloud LIVE">Listen</a></li>
+              <li><a href="https://shop.pointbreakradio.com" title="Merch">Shop</a></li>
+              <li><a href="https://mixcloud.com/pointbreakradio" title="Complete archive at MixCloud">Archive</a></li>
+              <li class="has-submenu">
+                <a href="#" title="Come and say hi!">Connect</a>
+                <ul class="submenu">
+                  <li><a href="https://www.facebook.com/pointbreakradio" title="Facebook">Facebook</a></li>
+                  <li><a href="https://www.instagram.com/pointbreakradio/" title="Instagram">Instagram</a></li>
+                  <li><a href="https://twitter.com/pointbreakradio" title="Twitter">Twitter</a></li>
+                </ul>
+              </li>      
+            </ul>
+          </nav>
+          
+          <h2>Recent Shows</h2>
+          <div id="archive">
+          </div>
+          <div class="radioguide">
+            <p>© Point Break Radio - Established 2020</p>
+          </div>
+          <script src="js/vendor/modernizr-3.8.0.min.js"></script>
+          <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+          <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.min.js"></script>
+          <script src="js/plugins.js"></script>
+          <script src="js/main.js"></script>
 
-    gtag('config', 'UA-171277034-1');
-  </script>
+          <!-- Global site tag (gtag.js) - Google Analytics -->
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171277034-1"></script>
+          <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-171277034-1');
+          </script>
+
+        </div>
+      </div>
+  </div>
 
 </body>
 

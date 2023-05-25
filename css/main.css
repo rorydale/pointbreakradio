@@ -89,40 +89,69 @@ textarea {
    Author's custom styles
    ========================================================================== */
 body {
-  background: #3b4edd;
+  margin: 0;
+  padding: 0;
+}
+
+.background-container {
+  position: relative;
+  height: 100vh;
+  /* Set the height to cover the viewport */
+}
+
+.gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  /* Set the height for the gradient portion */
   background: linear-gradient(0deg, #3b4edd 0%, #d328d3 80%, #f706cd 100%);
 }
 
-.container {
-  width: 600px;
+.content {
+  position: relative;
+  z-index: 1;
+  /* Ensure content appears above the gradient overlay */
+  height: 100%;
+  /* Use 100% height to fill the background container */
+  overflow-y: auto;
+  /* Enable scrolling for the content */
+  padding: 0 100px;
+}
+
+.content .container {
+  max-width: 1020px;
+  min-width: 420px;
   margin: 0 auto;
   font-family: sans-serif;
   text-align: center;
   color: #e7e7e7;
 }
 
-.container h1,
-.container h2,
-.container h3 {
-  color: #00e8f4;
-  font-weight: 400;
+.content .container h1,
+.content .container h2,
+.content .container h3 {
+  color: #a9ebee;
+  font-weight: 200;
   margin-bottom: 0px;
 }
 
-.container h2 {
+.content .container h2 {
   margin-top: 25px;
+  margin-bottom: 20px;
 }
 
-.container p {
+.content .container p {
   margin-top: 0px;
 }
 
-.container .more {
+.content .container .more {
   margin-top: 15px;
   font-size: 13px;
 }
 
-.container a:link, .container a:active, .container a:hover, .container a:visited {
+.content .container a:link, .content .container a:active, .content .container a:hover, .content .container a:visited {
   color: #ffffff;
 }
 
@@ -130,7 +159,57 @@ body {
   position: relative;
   width: 220px;
   height: auto;
-  margin: 50px auto 30px;
+  margin: 50px auto;
+  display: block;
+}
+
+.menu {
+  background-color: #E667D6;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  /* Display the list as inline-block */
+}
+
+.menu li {
+  position: relative;
+  font-weight: 200;
+  display: inline-block;
+  /* Display the list items as inline-block */
+}
+
+.menu a {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #333;
+  transition: background-color 0.1s ease;
+  /* Add transition for smooth effect */
+}
+
+.menu a:hover {
+  background-color: #e47ad6;
+  /* Change background color on hover */
+}
+
+.menu .submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #E667D6;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Subtle drop shadow */
+}
+
+.menu .has-submenu:hover > .submenu {
   display: block;
 }
 
@@ -147,6 +226,37 @@ body {
   text-align: center;
   font-family: sans-serif;
   font-size: 12px;
+}
+
+#archive {
+  list-style: none;
+  padding: 0;
+}
+
+#archive .commit-item {
+  background-color: rgba(255, 255, 255, 0.25);
+  text-align: left;
+  margin-bottom: 10px;
+  padding: 10px 30px;
+  border-radius: 5px;
+}
+
+#archive .commit-item h1 {
+  font-size: 24px;
+  text-align: center;
+  font-weight: 200;
+  color: #fff;
+}
+
+#archive .commit-item .iframe {
+  margin-bottom: 20px;
+}
+
+#archive .commit-item .description p {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 24px;
 }
 
 /* ==========================================================================
