@@ -1,9 +1,10 @@
 <?php
 
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
+// ini_set('display_errors', 1);
+// error_reporting(E_ALL);
 
-
+print GITHUB_ACCESS_TOKEN;
+return;
 
 // Import the GitHub API client library
 require_once 'config.php';
