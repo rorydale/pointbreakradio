@@ -41,42 +41,48 @@ if (curl_errno($curl)) {
     $apiResponse = json_decode($response, true);    
     
     $commits = array();
-    foreach ($apiResponse as $commit) {
-      // Check if the "description" key exists in the commit array
-      $commitString = $commit['commit']['message'];
-      $commitParts = explode("\n\n", $commitString, 2); // Split the commit string into two parts
     
-      $title = $commitParts[0]; // Assign the first part as the title
-    
-      // Validate the title as a date in the format "YYYY-mm-dd"
-      $date = DateTime::createFromFormat('Y-m-d', $title);
-      $isValidTitle = $date && $date->format('Y-m-d') === $title;
-      // Make sure $title is a date to only list the commits that are shows!
-      if ($isValidTitle) {
+    if ($apiResponse['message'] != "Bad credentials") {
+      foreach ($apiResponse as $commit) {
+        // Check if the "description" key exists in the commit array
+        $commitString = $commit['commit']['message'];
+        $commitParts = explode("\n\n", $commitString, 2); // Split the commit string into two parts
+      
+        $title = $commitParts[0]; // Assign the first part as the title
+      
+        // Validate the title as a date in the format "YYYY-mm-dd"
+        $date = DateTime::createFromFormat('Y-m-d', $title);
+        $isValidTitle = $date && $date->format('Y-m-d') === $title;
+        // Make sure $title is a date to only list the commits that are shows!
+        if ($isValidTitle) {
+          
+          if (isset($commitParts[1])) {
+            // Split the second part of the commit string at the first instance of "-"
+            $descriptionParts = explode('-', $commitParts[1], 2);
         
-        if (isset($commitParts[1])) {
-          // Split the second part of the commit string at the first instance of "-"
-          $descriptionParts = explode('-', $commitParts[1], 2);
-      
-          // Capitalize the first letter of the second part
-          $secondPart = trim($descriptionParts[1]); // Remove leading/trailing whitespace
-          $capitalizedSecondPart = ucfirst($secondPart); // Capitalize the first letter
+            // Capitalize the first letter of the second part
+            $secondPart = trim($descriptionParts[1]); // Remove leading/trailing whitespace
+            $capitalizedSecondPart = ucfirst($secondPart); // Capitalize the first letter
 
-        }
-      
-        $commitData = array(
-          'title' => $title,
-          'description' => $capitalizedSecondPart
-        );
-      
-        $commits[] = $commitData;
+          }
+        
+          $commitData = array(
+            'title' => $title,
+            'description' => $capitalizedSecondPart
+          );
+        
+          $commits[] = $commitData;
 
-      }  
- 
-    }
+        }  
+  
+      }
   
     // Pass the extracted commit data to the Handlebars.js template
     print json_encode($commits);
+
+  } else {
+    print json_encode($apiResponse);
+  }
 }
 
 // Close the cURL session
