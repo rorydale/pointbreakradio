@@ -6,9 +6,6 @@
 // Import the GitHub API client library
 require_once 'config.php';
 
-print GITHUB_ACCESS_TOKEN;
-return;
-
 // GitHub repository details
 $owner = 'rorydale';
 $repo = 'pointbreakradio';
