@@ -41,6 +41,8 @@ if (curl_errno($curl)) {
 } else {
     // Process the response
     $apiResponse = json_decode($response, true);
+    print json_encode($apiResponse);
+    return;
     
     $commits = array();
     foreach ($apiResponse as $commit) {
