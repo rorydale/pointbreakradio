@@ -2,6 +2,12 @@
 // Import the GitHub API client library
 require_once 'config.php';
 
+if (extension_loaded('curl')) {
+  echo 'cURL extension is enabled.';
+} else {
+  echo 'cURL extension is not enabled.';
+}
+
 // GitHub repository details
 $owner = 'rorydale';
 $repo = 'pointbreakradio';
