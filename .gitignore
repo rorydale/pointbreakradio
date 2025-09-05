@@ -6,3 +6,6 @@
 .DS_Store
 config.php
 /config.php
+/.env
+.env
+cache/

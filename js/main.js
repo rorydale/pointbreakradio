@@ -6,6 +6,8 @@ $(document).ready(function() {
 
   // Get view and render data
   function fetchDataAndRender(url, templateURL, targetElement) {
+    // Basic loading state
+    $(targetElement).html('<p class="more">Loading recent shows…</p>');
     // Retrieve the Handlebars template using AJAX
     $.ajax({
       url: templateURL,
@@ -19,27 +21,26 @@ $(document).ready(function() {
           url: url,
           dataType: 'json',
           success: function(data) {
-            console.log(data);
             // Render the Handlebars template with the data
             var renderedHtml = template(data);
-  
-            // Insert the rendered HTML into the target element
             $(targetElement).html(renderedHtml);
           },
           error: function(xhr, status, error) {
             console.error('Error fetching data:', error);
+            $(targetElement).html('<p class="more">Unable to load shows right now. Please try again later.</p>');
           }
         });
       },
       error: function(xhr, status, error) {
         console.error('Error fetching template:', error);
+        $(targetElement).html('<p class="more">Unable to load template.</p>');
       }
     });
   }
 
 
   // Render archive
-  fetchDataAndRender('../github-api.php', '../views/archive.hbs', '#archive');
+  fetchDataAndRender('github-api.php', 'views/archive.hbs', '#archive');
 
 
 });
